@@ -1,5 +1,5 @@
-from pc_agent.agent.dispatcher import ModeMapper
-from pc_agent.agent.os_controller import OSController
+from dispatcher import ModeMapper
+from os_controller import OSController
 
 controller = OSController()
 disp = ModeMapper()

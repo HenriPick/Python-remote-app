@@ -10,7 +10,7 @@ class OSController():
     
     #to-do chech if screen mode numbers work as expected, if not change to DisplaySwitch.exe /internal /external /clone /extend
     
-    def __init__(self, screen_mode, apps = None, rgb = None):
+    def __init__(self, screen_mode = 'both', apps = None, rgb = None):
         self.screen_mode = screen_mode
         self.apps = apps or []
         self.rgb = rgb
@@ -27,7 +27,7 @@ class OSController():
             subprocess.run([self.mmt, '/enable', TV], check=True)
             subprocess.run([self.mmt, '/SetPrimary', MONITOR], check=True)
         else:
-            print(f'Unknown screen mode: {screen_mode}')
+            print(f'Unknown screen mode: {screen_mode!r} | file: {__file__}')
             return
         time.sleep(2)
     

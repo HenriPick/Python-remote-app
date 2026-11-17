@@ -1,6 +1,6 @@
 import subprocess
 import os
-from urllib.parse import quote
+from openrgb import OpenRGBClient
 
 class OSController():
     
@@ -21,8 +21,8 @@ class OSController():
         
     def rgb_mode(self, rgb):
         self.rgb = rgb
-        encoded_rgb = quote(rgb)
-        os.startfile(f'signalrgb://effect/apply/{encoded_rgb}')
+        client = OpenRGBClient()
+        client.load_profile(self.rgb)
         #os.startfile(f'Prism_{rgb}.exe')
   
     def open_apps(self, apps):

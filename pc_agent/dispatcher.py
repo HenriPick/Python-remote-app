@@ -2,9 +2,9 @@ class ModeMapper():
     
     def __init__(self):
         self.modes = {
-            'cinema' : [4, None, 'dark'],
-            'game' : [4, ["steam://open/bigpicture"], 'cyanred'],
-            'work' : [3, None, 'cyanred']
+            'cinema' : ['tv', None, 'dark'],
+            'game' : ['tv', ["steam://open/bigpicture"], 'cyanred'],
+            'work' : ['both', None, 'cyanred']
             }
     
     def available_modes(self):
